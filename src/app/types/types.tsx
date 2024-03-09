@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface ProductDetailsType {
   rating?: number;
   title?: string;
@@ -64,4 +66,14 @@ export interface CountdownBoxProps {
 export interface CustomButtonProps {
   onClick?: () => void;
   text: string;
+}
+
+export interface IconDescriptionListProps {
+  style?: boolean;
+  data: {
+     image?: string;
+     title?: string;
+     description?: string[];
+     icons?: React.ReactNode[]
+    }[];
 }
