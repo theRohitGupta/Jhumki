@@ -1,33 +1,39 @@
-'use client'
-import { CountdownBoxProps, SaleEndsInProps } from '@/app/types/types';
-import React, { useState, useEffect } from 'react';
+"use client";
+import { CountdownBoxProps, SaleEndsInProps } from "@/app/types/types";
+import React, { useState, useEffect, useCallback } from "react";
 
 const CountdownBox: React.FC<CountdownBoxProps> = ({ label, value }) => (
   <div className="flex flex-row items-center gap-1">
-    <span className="bg-[#CCFBF1] p-0.5 rounded-md text-black text-xs font-bold">{value < 10 ? `0${value}` : value}</span>
+    <span className="bg-[#CCFBF1] p-0.5 rounded-md text-black text-xs font-bold">
+      {value < 10 ? `0${value}` : value}
+    </span>
     <span className="countdown-label">{label}</span>
   </div>
 );
 
 const SaleEndsIn: React.FC<SaleEndsInProps> = ({ endDate, outputFormat }) => {
-  const calculateTimeLeft = (): { days: number; hours: number; minutes: number; seconds: number } => {
+  const calculateTimeLeft = useCallback(() => {
     const saleEndTime = new Date(endDate).getTime();
     const currentTime = new Date().getTime();
     const timeDifference = saleEndTime - currentTime;
-  
+
     if (timeDifference <= 0) {
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
-  
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-  
-    return { days, hours, minutes, seconds };
-  };  
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    return { days, hours, minutes, seconds };
+  }, [endDate]);
+
+  const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft());
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,13 +41,15 @@ const SaleEndsIn: React.FC<SaleEndsInProps> = ({ endDate, outputFormat }) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [calculateTimeLeft]);
 
-  if (Object.values(timeLeft).some(value => isNaN(value) || value === undefined)) {
+  if (
+    Object.values(timeLeft).some((value) => isNaN(value) || value === undefined)
+  ) {
     return null;
   }
 
-  if (outputFormat === 'text') {
+  if (outputFormat === "text") {
     return (
       <div>
         {timeLeft.hours} Hrs : {timeLeft.minutes} Min : {timeLeft.seconds} Sec
