@@ -3,10 +3,10 @@ import SaleEndsIn from "../components/core/navbar/SaleEndsIn";
 import { Images, ProductDetailsType, SwiperComponentProps, SwiperSlideCustomProps, TitleBarProps } from "../types/types";
 
 export const dealsOfTheWeekTitleData : TitleBarProps  = {
-    title : "Deals Of The Week",
-    subTitle : "Sale ends in",
-    extraInfo : <SaleEndsIn endDate="2024-03-10T23:59:59" outputFormat="text"/>,
-    btn : <CustomButton text="View All"/>
+  title : "Deals Of The Week",
+  subTitle : "Sale ends in",
+  extraInfo : <SaleEndsIn endDate="2024-03-10T23:59:59" outputFormat="text"/>,
+  btn : <CustomButton text="View All"/>
 }
 
 export const newArrivalsTitleData : TitleBarProps  = {
@@ -22,12 +22,12 @@ export const trendingTitleData : TitleBarProps  = {
 }
 
 export const Product1Details : ProductDetailsType = {
-    rating: parseFloat((Math.random() * 2 + 3).toFixed(1)),
-    title: "Geometric Design Beads Terracotta Choker Necklace Set",
-    tags: ['best-seller','exclusive-deals'],
-    discountedPrice: 1999,
-    MRP: 4400,
-    discountPercentage: 54 
+  rating: parseFloat((Math.random() * 2 + 3).toFixed(1)),
+  title: "Geometric Design Beads Terracotta Choker Necklace Set",
+  tags: ['best-seller','exclusive-deals'],
+  discountedPrice: 1999,
+  MRP: 4400,
+  discountPercentage: 54 
 }
 
 export const Product2Details : ProductDetailsType = {

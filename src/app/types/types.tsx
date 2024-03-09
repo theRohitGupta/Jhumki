@@ -21,6 +21,7 @@ export interface SwiperSlideCustomProps {
   width: number;
   height: number;
   alt: string;
+  style?: string;
   wishlist?: boolean;
 }
 
@@ -44,6 +45,7 @@ export interface MyImageProps {
   alt: string;
   width: number;
   height: number;
+  style?: string;
 }
 
 export interface TitleBarProps {
@@ -67,14 +69,20 @@ export interface CustomButtonProps {
   onClick?: () => void;
   text: string;
   icon?: React.ReactNode
+  style?: string
+}
+
+export interface DescriptionData {
+  image?: string,
+  title?: string,
+  description?: string[];
+  icons?: React.ReactNode[]
 }
 
 export interface IconDescriptionListProps {
-  style?: boolean;
-  data: {
-     image?: string;
-     title?: string;
-     description?: string[];
-     icons?: React.ReactNode[]
-    }[];
+  data: DescriptionData[];
+}
+
+export interface DetailsDescriptionListProps {
+  data: DescriptionData[][]
 }

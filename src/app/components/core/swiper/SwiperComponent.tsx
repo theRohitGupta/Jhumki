@@ -50,6 +50,7 @@ const SwiperComponent: React.FC<SwiperComponentProps> = ({
               width={swiperSlideData.width}
               images={[data]}
               wishlist={swiperSlideData.wishlist}
+              style={swiperSlideData.style}
             />
           </SwiperSlide>
         ))}

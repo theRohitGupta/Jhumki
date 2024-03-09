@@ -16,6 +16,7 @@ const SwiperSlideCustom: React.FC<SwiperSlideCustomProps> = ({
   width,
   height,
   alt,
+  style,
   wishlist
 }) => {
   return (
@@ -29,6 +30,7 @@ const SwiperSlideCustom: React.FC<SwiperSlideCustomProps> = ({
                 <Swiper
                   slidesPerView={1}
                   navigation
+                  loop={true}
                   modules={[Navigation]}
                   className="w-3/4 mx-auto mySwiper"
                 >
@@ -39,6 +41,7 @@ const SwiperSlideCustom: React.FC<SwiperSlideCustomProps> = ({
                           src={image}
                           width={width}
                           height={height}
+                          style={style}
                           alt={`${alt} ${idx + 1}`}
                         />
                       </div>
@@ -55,6 +58,7 @@ const SwiperSlideCustom: React.FC<SwiperSlideCustomProps> = ({
                       src={imag}
                       width={width}
                       height={height}
+                      style={style}
                       alt={alt}
                     />
                     {wishlist && (

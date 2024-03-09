@@ -33,7 +33,7 @@ const ProductDetails: React.FC<ProductDetailsType> = ({
           </div>
         )}
 
-        {description && <p className="text-black mb-4">{description}</p>}
+        {description && <p className=" text-sm text-[#666666]">{description}</p>}
 
         {btn && <div>{btn}</div>}
 

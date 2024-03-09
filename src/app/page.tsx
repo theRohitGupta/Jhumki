@@ -1,3 +1,4 @@
+import DetailsDescriptionList from "./components/common/DetailsShow";
 import ShowImage from "./components/common/ImageShow";
 import IconDescriptionList from "./components/common/LogoShow";
 import TitleBar from "./components/common/TitleBar";
@@ -8,6 +9,7 @@ import { categorySwiperComponentProps, categoryTitleData } from "./data/category
 import { dealsOfTheWeekSwiperComponentProps, dealsOfTheWeekTitleData, newArrivalsTitleData, trendingTitleData } from "./data/dealsOftheWeek";
 import { aboutJumkeyTitleData, categoriesTitleData, iconDescriptionData, indiaLargestTitleData, infoDescriptionData, registeredAddressTitleData, trendingSearchesTitleData } from "./data/footerData";
 import { imageShow1Data, imageShow2Data } from "./data/imageShowData";
+import { reviewData, reviewSwiperComponentProps, reviewTitleData } from "./data/reviewData";
 
 
 export default function Home() {
@@ -55,12 +57,18 @@ export default function Home() {
             <SwiperComponent {...dealsOfTheWeekSwiperComponentProps}/>
           </div>
 
+          {/* REVIEWS */}
+          <div>
+            <TitleBar {...reviewTitleData}/>
+            <SwiperComponent {...reviewSwiperComponentProps}/>
+          </div>
+
         </div>
         {/* FOOTER */}
-        <div className="bg-[#FAFAFA] py-8">
-          <div className=" flex flex-col gap-16 w-3/4 mx-auto">
-            <IconDescriptionList data = {iconDescriptionData}/>
-            <IconDescriptionList style data = {infoDescriptionData}/>
+        <div className="bg-[#FAFAFA] py-14">
+          <div className=" flex flex-col gap-14 w-3/4 mx-auto">
+            <IconDescriptionList {...iconDescriptionData}/>
+            <DetailsDescriptionList {...infoDescriptionData}/>
             <TitleBar {...registeredAddressTitleData}/>
             <TitleBar {...trendingSearchesTitleData}/>
             <TitleBar {...aboutJumkeyTitleData}/>

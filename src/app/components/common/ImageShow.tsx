@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { MyImageProps } from '@/app/types/types';
 
-const ShowImage: React.FC<MyImageProps> = ({ src , alt, width, height}) => {
+const ShowImage: React.FC<MyImageProps> = ({ src , alt, width, height, style}) => {
   const [loading, setLoading] = useState(true);
 
   const handleImageLoad = () => {
@@ -22,7 +22,7 @@ const ShowImage: React.FC<MyImageProps> = ({ src , alt, width, height}) => {
         alt={alt}
         width={width}
         height={height}
-        className={`${loading ? 'opacity-0' : 'opacity-100'} transition-opacity object-cover`}
+        className={`${loading ? 'opacity-0' : 'opacity-100'} transition-opacity ${style}`}
         onLoad={handleImageLoad}
       />
     </div>
