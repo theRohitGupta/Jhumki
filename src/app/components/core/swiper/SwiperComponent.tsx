@@ -7,7 +7,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, FreeMode, Keyboard, Mousewheel, Navigation, Scrollbar } from "swiper/modules";
+import {
+  Autoplay,
+  FreeMode,
+  Keyboard,
+  Mousewheel,
+  Navigation,
+  Scrollbar,
+} from "swiper/modules";
 
 import SwiperSlideCustom from "./SwiperSlideCustom";
 import { SwiperComponentProps } from "@/app/types/types";
@@ -58,6 +65,5 @@ const SwiperComponent: React.FC<SwiperComponentProps> = ({
     </>
   );
 };
-
 
 export default SwiperComponent;
