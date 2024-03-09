@@ -1,7 +1,6 @@
 "use client";
 import { SwiperSlideCustomProps } from "@/app/types/types";
 import React from "react";
-import { CiHeart } from "react-icons/ci";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,6 +9,7 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ShowImage from "../../common/ImageShow";
 import ProductDetails from "../../common/ProductDetails";
+import { FaRegHeart } from "react-icons/fa";
 
 const SwiperSlideCustom: React.FC<SwiperSlideCustomProps> = ({
   images,
@@ -20,7 +20,7 @@ const SwiperSlideCustom: React.FC<SwiperSlideCustomProps> = ({
 }) => {
   return (
     <>
-      {Array.isArray(images) &&
+      {Array.isArray(images) && images.length &&
         images.map((imageObject, index) => 
         (
           <div className="relative" key={index}>
@@ -45,7 +45,7 @@ const SwiperSlideCustom: React.FC<SwiperSlideCustomProps> = ({
                     </SwiperSlide>
                   ))}
                 </Swiper>
-                <ProductDetails {...imageObject.data}/>
+                {imageObject.data && <ProductDetails {...imageObject.data}/>}
               </>
             ) : (
               <div>
@@ -58,8 +58,8 @@ const SwiperSlideCustom: React.FC<SwiperSlideCustomProps> = ({
                       alt={alt}
                     />
                     {wishlist && (
-                      <div className="absolute top-2 right-2">
-                        <CiHeart className="h-6 w-6 text-white font-bold" />
+                      <div className="absolute rounded-full p-2 top-2 right-2 hover:bg-black hover:bg-opacity-10 transition-all duration-100">
+                        <FaRegHeart className="h-6 w-6 text-white font-bold" />
                       </div>
                     )}
                     <ProductDetails {...imageObject.data}/>

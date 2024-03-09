@@ -1,18 +1,9 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import InfoBar from "./InfoBar";
-import SaleEndsIn from "./SaleEndsIn";
+import infoBarContents from "../../../data/navbarInfo";
 
 const Navbar: React.FC = () => {
-    const infoBarContents: { key: string | number, content: string | React.ReactNode }[] = [
-        { key: '1', content: '<h1>7 Days Free and Easy Returns/COD Available</h1>' },
-        { key: '2', content: <SaleEndsIn endDate="2024-03-06T23:59:59"/> },
-        { key: '3', content: '<h1>Flat 300/- Off on Orders Above 2000. Use Code JUMKEY300</h1>' },
-        { key: '4', content: '<h1>Worldwide Shipping via DHL</h1>' },
-        { key: '5', content: '<h1>Flat 300/- Off on Orders Above 2000. Use Code JUMKEY300</h1>' },
-        { key: '6', content: '<h1>Times Honoured Best Fashion Jewellery Brand</h1>' }
-    ];
-
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {

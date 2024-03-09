@@ -12,10 +12,10 @@ import { imageShow1Data, imageShow2Data } from "./data/imageShowData";
 
 export default function Home() {
   return (
-    <div className=" w-full mx-auto">
+    <div className=" w-full mx-auto font-mulish">
         <Navbar/>
 
-        <div className="my-10 mx-6 flex flex-col gap-16">
+        <div className="my-10 mx-6 flex flex-col gap-20">
           {/* BANNERS */}
           <div>
             <SwiperComponent {...bannerSwiperComponentProps}/>

@@ -66,6 +66,7 @@ export interface CountdownBoxProps {
 export interface CustomButtonProps {
   onClick?: () => void;
   text: string;
+  icon?: React.ReactNode
 }
 
 export interface IconDescriptionListProps {
