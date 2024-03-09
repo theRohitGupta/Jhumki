@@ -13,7 +13,7 @@ export interface ProductDetailsType {
 
 export interface Images {
   src: string[];
-  data?: ProductDetailsType
+  data?: ProductDetailsType;
 }
 
 export interface SwiperSlideCustomProps {
@@ -36,8 +36,8 @@ export interface SwiperComponentProps {
   modules?: string[];
   scrollbar?: boolean;
   mousewheel?: boolean;
-  keyboard? : boolean;
-  cssMode? : boolean
+  keyboard?: boolean;
+  cssMode?: boolean;
 }
 
 export interface MyImageProps {
@@ -57,7 +57,7 @@ export interface TitleBarProps {
 
 export interface SaleEndsInProps {
   endDate: string;
-  outputFormat?: 'text';
+  outputFormat?: "text";
 }
 
 export interface CountdownBoxProps {

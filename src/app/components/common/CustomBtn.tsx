@@ -1,11 +1,14 @@
-import { CustomButtonProps } from '@/app/types/types';
-import React from 'react';
+import { CustomButtonProps } from "@/app/types/types";
+import React from "react";
 
-const CustomButton: React.FC<CustomButtonProps> = ({ onClick, text }) => (
-  <button
-    onClick={onClick}
-    className="text-[#26A69A] "
-  >
+const CustomButton: React.FC<CustomButtonProps> = ({
+  onClick,
+  text,
+  icon,
+  style,
+}) => (
+  <button onClick={onClick} className={`text-[#CCFBF1] ${style}`}>
+    {icon}
     {text}
   </button>
 );

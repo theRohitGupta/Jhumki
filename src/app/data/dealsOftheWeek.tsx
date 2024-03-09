@@ -86,14 +86,6 @@ export const dealsOfTheWeekData: Images[] = [
     src: ["https://cdn.picpil.com/fit-in/540x720/assets/2022/08/236/6a2d0c83e34546f9be82efcacc0081da.jpg"],
     data: Product3Details,
   },
-  // {
-  //   src: ["https://cdn.picpil.com/fit-in/540x720/assets/2020/8/25/383d2ab1e68c11eabd7f02cc4eb47ca4.jpg"],
-  //   data: Product4Details,
-  // },
-  // {
-  //   src: ["https://cdn.picpil.com/fit-in/540x720/assets/2020/8/25/08ade6e0e69111eabd7f02cc4eb47ca4.jpg"],
-  //   data: Product1Details,
-  // },
   {
     src: ["https://cdn.picpil.com/fit-in/540x720/assets/2023/08/215/b71c787f49094bc39a0e342dfe459722.jpg"],
     data: Product2Details,
