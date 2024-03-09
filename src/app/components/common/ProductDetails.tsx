@@ -15,19 +15,19 @@ const ProductDetails: React.FC<ProductDetailsType> = ({
   return (
     <div className="relative">
       {rating && (
-        <div className="absolute -top-10 right-2 bg-white p-1 flex items-center text-black">
+        <div className="absolute -top-8 right-4 bg-white px-1 py-[0.5] flex items-center text-black">
           <FaStar className="h-4 w-4 text-[#0D9488] mr-1" />
-          <span className=' font-semibold text-sm'>{rating}</span>
+          <span className=' font-bold text-sm'>{rating.toFixed(1)}</span>
         </div>
       )}
-      <div className="flex flex-col gap-2">
-        {title && <h2 className="text-2xl font-bold mb-2">{title}</h2>}
+      <div className="flex flex-col gap-2 justify-between h-32 p-2">
+        {title && <h2 className="text-sm font-semibold">{title}</h2>}
 
         {tags && (
-          <div className="mb-2">
-            Tags: {tags.map((tag, idx) => (
-              <span key={idx} className="mr-2">
-                {tag}
+          <div className="text-sm flex gap-2 text-[#666666]">
+            {tags.map((tag, idx) => (
+              <span key={idx} className="">
+                #{tag}
               </span>
             ))}
           </div>
@@ -38,13 +38,13 @@ const ProductDetails: React.FC<ProductDetailsType> = ({
         {btn && <div>{btn}</div>}
 
         {discountedPrice && MRP && discountPercentage && (
-          <div className="flex items-center text-black">
-            <span className="text-xl font-bold mr-2">
-              Discounted Price: ₹{discountedPrice}
+          <div className="flex items-center text-black gap-2">
+            <span className="font-semibold text-lg">
+              ₹{discountedPrice}
             </span>
-            <span className="text-xl line-through">MRP: ₹{MRP}</span>
-            <span className="text-xl ml-2">
-              Discount: {discountPercentage}%
+            <span className="text-base font-extralight line-through text-[#666666]">₹{MRP}</span>
+            <span className="text-base text-[#2E7D32]">
+              {discountPercentage}% OFF
             </span>
           </div>
         )}

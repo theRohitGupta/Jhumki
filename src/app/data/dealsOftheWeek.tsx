@@ -5,7 +5,7 @@ import { Images, ProductDetailsType, SwiperComponentProps, SwiperSlideCustomProp
 export const dealsOfTheWeekTitleData : TitleBarProps  = {
     title : "Deals Of The Week",
     subTitle : "Sale ends in",
-    extraInfo : <SaleEndsIn endDate="2024-03-06T23:59:59" outputFormat="text"/>,
+    extraInfo : <SaleEndsIn endDate="2024-03-10T23:59:59" outputFormat="text"/>,
     btn : <CustomButton text="View All"/>
 }
 
@@ -86,14 +86,14 @@ export const dealsOfTheWeekData: Images[] = [
     src: ["https://cdn.picpil.com/fit-in/540x720/assets/2022/08/236/6a2d0c83e34546f9be82efcacc0081da.jpg"],
     data: Product3Details,
   },
-  {
-    src: ["https://cdn.picpil.com/fit-in/540x720/assets/2020/8/25/383d2ab1e68c11eabd7f02cc4eb47ca4.jpg"],
-    data: Product4Details,
-  },
-  {
-    src: ["https://cdn.picpil.com/fit-in/540x720/assets/2020/8/25/08ade6e0e69111eabd7f02cc4eb47ca4.jpg"],
-    data: Product1Details,
-  },
+  // {
+  //   src: ["https://cdn.picpil.com/fit-in/540x720/assets/2020/8/25/383d2ab1e68c11eabd7f02cc4eb47ca4.jpg"],
+  //   data: Product4Details,
+  // },
+  // {
+  //   src: ["https://cdn.picpil.com/fit-in/540x720/assets/2020/8/25/08ade6e0e69111eabd7f02cc4eb47ca4.jpg"],
+  //   data: Product1Details,
+  // },
   {
     src: ["https://cdn.picpil.com/fit-in/540x720/assets/2023/08/215/b71c787f49094bc39a0e342dfe459722.jpg"],
     data: Product2Details,
@@ -119,7 +119,7 @@ export const dealsOfTheWeekData: Images[] = [
   export const dealsOfTheWeekSwiperComponentProps: SwiperComponentProps = {
     swiperSlideData: dealsOfTheWeekSlideData,
     slidesPerView: 4.5,
-    spaceBetween: 10,
+    spaceBetween: 16,
     freeMode: true,
     scrollbar : true,
     mousewheel : true,

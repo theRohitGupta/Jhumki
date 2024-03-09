@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 const CountdownBox: React.FC<CountdownBoxProps> = ({ label, value }) => (
   <div className="flex flex-row items-center gap-1">
-    <span className="bg-[#CCFBF1] p-0.5 rounded-md text-black text-xs">{value < 10 ? `0${value}` : value}</span>
+    <span className="bg-[#CCFBF1] p-0.5 rounded-md text-black text-xs font-bold">{value < 10 ? `0${value}` : value}</span>
     <span className="countdown-label">{label}</span>
   </div>
 );
