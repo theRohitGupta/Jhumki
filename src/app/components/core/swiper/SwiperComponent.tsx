@@ -7,7 +7,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, FreeMode, Keyboard, Mousewheel, Navigation, Scrollbar } from "swiper/modules";
+import {
+  Autoplay,
+  FreeMode,
+  Keyboard,
+  Mousewheel,
+  Navigation,
+  Scrollbar,
+} from "swiper/modules";
 
 import SwiperSlideCustom from "./SwiperSlideCustom";
 import { SwiperComponentProps } from "@/app/types/types";
@@ -42,21 +49,21 @@ const SwiperComponent: React.FC<SwiperComponentProps> = ({
   return (
     <>
       <Swiper {...swiperOptions} className="mySwiper">
-        {swiperSlideData.images.map((data, index) => (
-          <SwiperSlide key={index}>
-            <SwiperSlideCustom
-              alt={`${swiperSlideData.alt + index}`}
-              height={swiperSlideData.height}
-              width={swiperSlideData.width}
-              images={[data]}
-              wishlist={swiperSlideData.wishlist}
-            />
-          </SwiperSlide>
-        ))}
+        {swiperSlideData &&
+          swiperSlideData.images.map((data, index) => (
+            <SwiperSlide key={index}>
+              <SwiperSlideCustom
+                alt={`${swiperSlideData.alt + index}`}
+                height={swiperSlideData.height}
+                width={swiperSlideData.width}
+                images={[data]}
+                wishlist={swiperSlideData.wishlist}
+              />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </>
   );
 };
-
 
 export default SwiperComponent;
